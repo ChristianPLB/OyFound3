@@ -1,0 +1,304 @@
+/* ==========================================================================
+   HomeStudent Theme (Centered Capsule Layout - Slate Blue Gradient)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- MAIN CONTAINER & SLATE BLUE GRADIENT BASE --- */
+.student-home {
+    min-height: 100vh;
+    padding: 60px max(20px, 5vw);
+    font-family: 'Poppins', sans-serif;
+    color: #062438;
+    background: linear-gradient(
+        112deg,
+        #b5d5e7 0%,   /* Lightest sky blue */
+        #a7c8da 25%,  /* Mid-light blue */
+        #99bccc 50%,  /* Middle slate blue */
+        #8bb0bf 75%,  /* Mid-dark slate blue */
+        #7fa1b0 100%  /* Dark slate blue */
+    );
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* --- CENTERED CATEGORY HEADER NAVIGATION --- */
+.category-header {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.45); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7); 
+    padding: 6px;
+    border-radius: 40px;
+    gap: 4px;
+    box-shadow: 0 10px 25px rgba(6, 36, 56, 0.12);
+    margin: 0 auto 40px auto;
+}
+
+.category-header button {
+    background: none;
+    border: none;
+    color: #183e58; 
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 28px;
+    border-radius: 30px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-header button:hover {
+    color: #062438;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.category-header button.active {
+    color: #ffffff;
+    background: #062438; 
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(6, 36, 56, 0.25);
+}
+
+/* --- EMPTY STATE VIEW (CENTERED) --- */
+.empty-state-card {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-state-card p {
+    margin: 0;
+    color: #062438;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   REPORTS GRID & GLASS CARD CONTAINER
+   ========================================================================== */
+.dashboard-widgets {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+    gap: 24px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.student-card-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 10px 25px rgba(6, 36, 56, 0.08);
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.student-card-container:hover {
+    background: rgba(255, 255, 255, 0.55);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(6, 36, 56, 0.15);
+}
+
+.student-card-left {
+    flex: 0 0 160px;
+    height: 160px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(6, 36, 56, 0.05);
+    border: 1px solid rgba(6, 36, 56, 0.15);
+}
+
+.student-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.student-card-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+}
+
+.card-item-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #062438;
+    text-align: left;
+}
+
+.card-info-text {
+    font-size: 0.88rem;
+    margin: 2px 0;
+    color: #08283e;
+    text-align: left;
+}
+
+.card-description-box {
+    font-size: 0.84rem;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    color: #183e58;
+    text-align: left;
+    width: 100%;
+}
+
+.card-description-box p {
+    margin: 2px 0 0 0;
+    text-align: left;
+}
+
+.card-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+/* ==========================================================================
+   STATUS BADGES & ACTION BUTTONS
+   ========================================================================== */
+.status-pill {
+    display: inline-flex;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+}
+
+.status-pill.status-lost {
+    background: rgba(220, 38, 38, 0.15);
+    color: #dc2626;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.status-pill.status-found {
+    background: rgba(5, 150, 105, 0.15);
+    color: #059669;
+    border: 1px solid rgba(5, 150, 105, 0.3);
+}
+
+.claim-btn {
+    background: #062438;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 8px 20px;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(6, 36, 56, 0.25);
+    transition: all 0.25s ease;
+}
+
+.claim-btn:hover:not(:disabled) {
+    background: #18415d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(6, 36, 56, 0.35);
+}
+
+.claim-btn.claimed {
+    background: #dc2626;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.claim-btn.claimed:hover:not(:disabled) {
+    background: #b91c1c;
+}
+
+.claim-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SHIFTS
+   ========================================================================== */
+@media(max-width: 768px) {
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 576px) {
+    .student-home {
+        padding: 40px 16px;
+    }
+    .student-card-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .student-card-left {
+        width: 100%;
+        height: 180px;
+        flex: none;
+    }
+    .category-header {
+        display: flex;
+        width: 100%;
+        border-radius: 20px;
+    }
+    .category-header button {
+        flex: 1;
+        padding: 10px 0;
+        font-size: 0.82rem;
+    }
+}
+/* Red Pending Admin Button State */
+.claim-btn.pending {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.claim-btn.pending:hover:not(:disabled) {
+    background-color: #b91c1c !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(220, 38, 38, 0.45);
+}

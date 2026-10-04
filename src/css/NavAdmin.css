@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   ADMIN NAVBAR
+========================================= */
+
+.nav-admin-navbar {
+    background: #0D1B2A !important;
+    min-height: 70px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid rgba(119, 141, 169, 0.2);
+}
+
+.nav-admin-container {
+    width: 100%;
+}
+
+/* =========================================
+   BRAND / LOGO
+========================================= */
+
+.nav-admin-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-admin-brand:hover {
+    text-decoration: none;
+}
+
+.admin-logo-text-base {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    letter-spacing: -0.4px;
+}
+
+/* =========================================
+   MOBILE TOGGLER
+========================================= */
+
+.nav-admin-toggler {
+    border-color: #778DA9;
+}
+
+.nav-admin-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(119, 141, 169, 0.2);
+}
+
+.nav-admin-toggler .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.nav-admin-links {
+    gap: 8px;
+}
+
+.nav-admin-link {
+    color: #E0E1DD !important;
+    font-weight: 500;
+    padding: 8px 12px !important;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+}
+
+.nav-admin-link:hover {
+    color: #E0E1DD !important;
+    background: rgba(65, 90, 119, 0.45);
+}
+
+.nav-admin-link:focus {
+    color: #E0E1DD !important;
+}
+
+/* =========================================
+   RED UNREAD MESSAGE BADGE
+========================================= */
+
+.nav-unread-badge {
+    background: linear-gradient(135deg, #FF3B30, #D70015) !important;
+    color: #ffffff !important;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    margin-left: 8px;
+    border-radius: 99px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #0D1B2A;
+    box-shadow: 0 2px 8px rgba(215, 0, 21, 0.5);
+    transition: transform 0.2s ease;
+}
+
+.nav-admin-link:hover .nav-unread-badge {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   REPORT BUTTON
+========================================= */
+
+.nav-admin-report-button {
+    background: #415A77 !important;
+    border-color: #415A77 !important;
+    color: #E0E1DD !important;
+    font-weight: 500;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+}
+
+.nav-admin-report-button:hover {
+    background: #778DA9 !important;
+    border-color: #778DA9 !important;
+    color: #0D1B2A !important;
+}
+
+/* =========================================
+   ADMIN USER SECTION
+========================================= */
+
+.nav-admin-user-section {
+    border-color: rgba(119, 141, 169, 0.3) !important;
+}
+
+.nav-admin-profile {
+    color: #E0E1DD;
+}
+
+.nav-admin-user-name {
+    color: #E0E1DD;
+    font-weight: 500;
+}
+
+.nav-admin-profile-image {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border: 2px solid #778DA9;
+}
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.nav-admin-logout {
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 5px 12px;
+}
+
+/* =========================================
+   TABLET / MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .nav-admin-navbar {
+        padding: 8px 15px;
+    }
+
+    .nav-admin-links {
+        width: 100%;
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(119, 141, 169, 0.2);
+    }
+
+    .nav-admin-links .nav-item {
+        width: 100%;
+    }
+
+    .nav-admin-link {
+        width: 100%;
+        padding: 10px 12px !important;
+        justify-content: space-between;
+    }
+
+    .nav-admin-report-button {
+        display: block;
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .nav-admin-user-section {
+        width: 100%;
+        border-left: none !important;
+        border-top: 1px solid rgba(119, 141, 169, 0.2);
+        padding: 12px 0 0 0 !important;
+        margin-top: 10px;
+    }
+
+    .nav-admin-profile {
+        flex: 1;
+    }
+
+    .nav-admin-logout {
+        margin-left: auto;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 576px) {
+
+    .nav-admin-navbar {
+        padding: 7px 10px;
+    }
+
+    .nav-admin-brand svg {
+        width: 170px;
+        height: 38px;
+    }
+
+    .nav-admin-user-name {
+        display: none !important;
+    }
+
+    .nav-admin-profile-image {
+        width: 34px;
+        height: 34px;
+    }
+
+    .nav-admin-logout {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}

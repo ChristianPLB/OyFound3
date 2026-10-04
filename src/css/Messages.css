@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   1. GLOBAL CONTAINER & FLOATING CARDS LAYOUT
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.messages-container,
+.messages-container * {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Outer Blue Gradient Area with Padding (Creates Floating Card Look) */
+.messages-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #b5d5e7 0%, #a7c8da 25%, #99bccc 50%, #8bb0bf 75%, #7fa1b0 100%);
+    background-attachment: fixed;
+    color: #062438;
+    overflow: hidden;
+    padding: 20px;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. FLOATING SIDEBAR PANEL
+   ========================================================================== */
+.messages-sidebar {
+    width: 320px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(6, 36, 56, 0.08);
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(6, 36, 56, 0.08);
+    background: transparent;
+}
+
+.sidebar-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    color: #062438;
+}
+
+.conversation-list,
+.convo-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Conversation Card */
+.convo-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(6, 36, 56, 0.06);
+    gap: 12px;
+}
+
+.convo-item:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.convo-item.active {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 4px solid #062438;
+}
+
+.convo-avatar-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.convo-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(6, 36, 56, 0.1);
+}
+
+.unread-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #dc2626;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
+
+.convo-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.convo-info strong {
+    font-size: 0.9rem;
+    color: #062438;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.convo-info p {
+    font-size: 0.8rem;
+    color: #08283e;
+    margin: 2px 0 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   3. FLOATING CHAT MAIN CARD
+   ========================================================================== */
+.chat-main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(6, 36, 56, 0.08);
+    overflow: hidden;
+}
+
+.chat-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(6, 36, 56, 0.08);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.chat-header-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.chat-header-user h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #062438;
+}
+
+.chat-header-user span {
+    font-size: 0.8rem;
+    color: #08283e;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   4. CHAT HISTORY & MESSAGE BUBBLES
+   ========================================================================== */
+.chat-history {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.msg-row {
+    display: flex !important;
+    align-items: flex-end;
+    width: 100%;
+    gap: 10px;
+}
+
+.msg-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Sent Messages (Right) */
+.msg-sent {
+    justify-content: flex-end !important;
+}
+
+.sent-container {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.msg-bubble.sent {
+    background: #062438 !important;
+    color: #ffffff !important;
+    border-radius: 18px 18px 4px 18px !important;
+    box-shadow: 0 2px 8px rgba(6, 36, 56, 0.2) !important;
+    padding: 12px 18px !important;
+    font-size: 0.88rem !important;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* Received Messages (Left) */
+.msg-received {
+    justify-content: flex-start !important;
+}
+
+.received-container {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.msg-bubble.received {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #062438 !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    border-radius: 18px 18px 18px 4px !important;
+    box-shadow: 0 2px 8px rgba(6, 36, 56, 0.06) !important;
+    padding: 12px 18px !important;
+    font-size: 0.88rem !important;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.msg-time {
+    font-size: 11px;
+    opacity: 0.75;
+    display: block;
+    margin-top: 4px;
+    font-weight: 500;
+    color: #062438;
+}
+
+.sender-tag {
+    font-size: 11px;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   5. FLOATING INPUT CONTAINER
+   ========================================================================== */
+.chat-input-section {
+    padding: 16px 20px;
+    background: transparent;
+}
+
+.input-box-container {
+    position: relative;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(6, 36, 56, 0.06);
+}
+
+.input-with-sender {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+textarea {
+    flex: 1;
+    min-height: 38px;
+    max-height: 100px;
+    resize: none;
+    padding: 8px 6px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #062438;
+    font-size: 0.88rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea::placeholder {
+    color: #7fa1b0;
+}
+
+.attachment-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+    color: #062438;
+    opacity: 0.8;
+}
+
+.sender-tag-right {
+    position: absolute;
+    right: 12px;
+    top: -14px;
+    background: #062438;
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    pointer-events: none;
+    box-shadow: 0 2px 6px rgba(6, 36, 56, 0.2);
+}
+
+.empty-chat-state {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #183e58;
+    font-size: 1rem;
+    font-style: italic;
+}

@@ -1,0 +1,938 @@
+/* =========================================================
+   RESET & BASE STYLES
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+
+    /* Allows page to scroll cleanly down to footer */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+button {
+    font-family: inherit;
+    text-align: center;
+}
+
+
+/* =========================================================
+   MAIN PAGE CONTAINER & 3D PERSPECTIVE ENVIRONMENT
+========================================================= */
+
+.home-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #b5d5e7;
+    perspective: 1400px; /* Gives realistic depth perception to floating items */
+}
+
+
+/* =========================================================
+   HERO SECTION & PALETTE GRADIENT
+========================================================= */
+
+.home-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: calc(100vh - 50px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 70px;   /* Clears navbar space */
+    padding-bottom: 40px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        112deg,
+        #b5d5e7 0%,   /* Lightest sky blue */
+        #a7c8da 25%,  /* Mid-light blue */
+        #99bccc 50%,  /* Middle slate blue */
+        #8bb0bf 75%,  /* Mid-dark slate blue */
+        #7fa1b0 100%  /* Dark slate blue */
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 28% 35%,
+            rgba(255, 255, 255, 0.35) 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 72% 65%,
+            rgba(255, 255, 255, 0.25) 0%,
+            transparent 50%
+        );
+}
+
+
+/* =========================================================
+   HERO CONTENT (LOGIN CARD SIZE & ASPECT PROPORTION)
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 20;
+
+    width: min(900px, 90%);
+    min-height: 520px;
+
+    margin: auto;
+    padding: 50px 48px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 28px;
+
+    box-shadow: 
+        0 15px 35px rgba(10, 35, 55, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+
+.hero-content h1 {
+    margin: 0;
+
+    color: #062438;
+
+    font-size: clamp(34px, 3.8vw, 56px);
+
+    font-weight: 900;
+
+    line-height: 1.18;
+
+    letter-spacing: -1.5px;
+
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.hero-content h1 span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #1e4560;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DESCRIPTION & TAGLINE
+========================================================= */
+
+.hero-description {
+    margin: 22px auto 0;
+
+    color: #08283e;
+
+    font-size: clamp(15px, 1.3vw, 20px);
+
+    font-weight: 700;
+
+    line-height: 1.45;
+    text-align: center;
+
+    max-width: 680px;
+}
+
+
+.hero-tagline {
+    margin: 14px auto 0;
+
+    color: #183e58;
+
+    font-size: clamp(13px, 1.1vw, 16px);
+
+    font-style: italic;
+    font-weight: 600;
+
+    line-height: 1.4;
+    text-align: center;
+}
+
+
+/* =========================================================
+   GET STARTED BUTTON
+========================================================= */
+
+.get-started-button {
+    position: relative;
+
+    width: min(320px, 85%);
+    height: 58px;
+
+    margin-top: 32px;
+
+    border: 3px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 40px;
+
+    background: #062438;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    cursor: pointer;
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(6, 36, 56, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.get-started-button:hover {
+    transform: translateY(-3px);
+
+    background: #18415d;
+
+    box-shadow:
+        0 12px 28px rgba(6, 36, 56, 0.35);
+}
+
+
+.get-started-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(6, 36, 56, 0.2);
+}
+
+
+/* =========================================================
+   FOOTER (SCROLLABLE NATURAL BOTTOM BAR)
+========================================================= */
+
+.home-footer,
+.footer {
+    position: relative;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background-color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.home-footer .text-start,
+.footer .text-start,
+.text-start {
+    margin: 0;
+    padding: 16px 20px;
+
+    width: 100%;
+
+    background-color: #ffffff;
+
+    color: #062438;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   3D FLOATING ANIMATIONS (3-AXIS MULTI-LAYER TRANSFORMATIONS)
+========================================================= */
+
+@keyframes floatPhone3D {
+    0%, 100% {
+        transform: rotateX(22deg) rotateY(-28deg) rotateZ(-6deg) translateY(0px) translateZ(0px);
+    }
+    50% {
+        transform: rotateX(15deg) rotateY(-20deg) rotateZ(-2deg) translateY(-22px) translateZ(35px);
+    }
+}
+
+@keyframes floatTumbler3D {
+    0%, 100% {
+        transform: rotateX(18deg) rotateY(28deg) rotateZ(10deg) translateY(0px) translateZ(0px);
+    }
+    50% {
+        transform: rotateX(25deg) rotateY(20deg) rotateZ(14deg) translateY(-26px) translateZ(25px);
+    }
+}
+
+@keyframes floatWallet3D {
+    0%, 100% {
+        transform: translateX(-50%) rotateX(-22deg) rotateY(20deg) rotateZ(3deg) translateY(0px);
+    }
+    50% {
+        transform: translateX(-50%) rotateX(-14deg) rotateY(28deg) rotateZ(-1deg) translateY(-20px);
+    }
+}
+
+@keyframes floatPen3D {
+    0%, 100% {
+        transform: rotateX(32deg) rotateY(-38deg) rotateZ(-28deg) translateY(0px);
+    }
+    50% {
+        transform: rotateX(22deg) rotateY(-28deg) rotateZ(-20deg) translateY(-18px);
+    }
+}
+
+@keyframes floatBag3D {
+    0%, 100% {
+        transform: rotateX(14deg) rotateY(-24deg) rotateZ(-8deg) translateY(0px) translateZ(0px);
+    }
+    50% {
+        transform: rotateX(20deg) rotateY(-16deg) rotateZ(-3deg) translateY(-28px) translateZ(30px);
+    }
+}
+
+
+/* =========================================================
+   3D DECORATIVE FLOATING ITEMS
+========================================================= */
+
+.lost-item {
+    pointer-events: none;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+/* ---------------------------------------------------------
+   1. 3D SMARTPHONE
+--------------------------------------------------------- */
+.phone-item {
+    z-index: 8;
+    left: 45px;
+    bottom: 150px;
+    width: 125px;
+    height: 230px;
+    animation: floatPhone3D 6.5s ease-in-out infinite;
+}
+
+.phone-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.phone-body-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 26px;
+    background: linear-gradient(135deg, #374952, #1f2b31);
+    padding: 7px;
+    /* Multilayered 3D extrusion effect */
+    box-shadow:
+        -2px 2px 0px #182227,
+        -4px 4px 0px #141c20,
+        -6px 6px 0px #10161a,
+        -8px 8px 0px #0b0e11,
+        -14px 18px 25px rgba(6, 36, 56, 0.40);
+}
+
+.phone-camera-bump {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 28px;
+    height: 28px;
+    background: #182227;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3px;
+    box-shadow: inset -1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.phone-camera-bump .lens {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #090e11;
+    border: 1px solid #485c66;
+}
+
+.phone-screen-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(160deg, #628392, #314a56);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.phone-notch {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 8px;
+    background: #141c20;
+    border-radius: 10px;
+}
+
+.phone-glare {
+    position: absolute;
+    top: -20%;
+    left: -60%;
+    width: 220%;
+    height: 140%;
+    background: linear-gradient(
+        60deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.22) 50%,
+        transparent 60%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   2. 3D TUMBLER (INSULATED STAINLESS STEEL WATER BOTTLE)
+--------------------------------------------------------- */
+.tumbler-item {
+    z-index: 7;
+    left: 270px;
+    bottom: 130px;
+    width: 85px;
+    height: 230px;
+    animation: floatTumbler3D 7.2s ease-in-out infinite 0.8s;
+}
+
+.tumbler-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.tumbler-handle {
+    position: absolute;
+    top: -8px;
+    width: 36px;
+    height: 18px;
+    border: 5px solid #4a5440;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+}
+
+.tumbler-lid {
+    position: relative;
+    width: 64px;
+    height: 28px;
+    background: linear-gradient(90deg, #59644d, #9eb089, #444e39);
+    border-radius: 10px 10px 2px 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.tumbler-spout {
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    width: 12px;
+    height: 8px;
+    background: #2b3323;
+    border-radius: 3px;
+}
+
+.tumbler-rim {
+    width: 70px;
+    height: 10px;
+    background: linear-gradient(90deg, #b8c4cf, #ffffff, #8896a3);
+    border-radius: 3px;
+    margin-top: -2px;
+}
+
+.tumbler-body {
+    position: relative;
+    width: 76px;
+    height: 175px;
+    border-radius: 12px 12px 28px 28px;
+    background: linear-gradient(90deg, #5c664b 0%, #b3c29d 42%, #d5e3c1 58%, #475237 100%);
+    box-shadow:
+        -3px 3px 0px #3a432c,
+        -6px 6px 0px #2a3120,
+        -12px 16px 22px rgba(6, 36, 56, 0.35);
+}
+
+.tumbler-grip-ring {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 24px;
+    background: rgba(45, 53, 36, 0.22);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.tumbler-sheen {
+    position: absolute;
+    top: 0;
+    left: 36px;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.38);
+    filter: blur(1.5px);
+}
+
+
+/* ---------------------------------------------------------
+   3. 3D LEATHER WALLET
+--------------------------------------------------------- */
+.wallet-item {
+    z-index: 8;
+    left: 50%;
+    bottom: 90px;
+    width: 185px;
+    height: 125px;
+    animation: floatWallet3D 6.8s ease-in-out infinite 1.2s;
+}
+
+.wallet-3d {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.wallet-body-3d {
+    position: relative;
+    width: 175px;
+    height: 115px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #5b6f75, #3a4b51);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    /* Stacked leather thickness */
+    box-shadow:
+        0px 3px 0px #29363a,
+        0px 6px 0px #1f292d,
+        0px 9px 0px #141c1f,
+        -10px 18px 25px rgba(6, 36, 56, 0.38);
+}
+
+.wallet-card-slot {
+    position: absolute;
+    top: 18px;
+    left: 14px;
+    width: 145px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #445459, #313e43);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.credit-card {
+    position: absolute;
+    top: 6px;
+    right: 12px;
+    width: 70px;
+    height: 40px;
+    background: linear-gradient(135deg, #a38753, #d4ba83);
+    border-radius: 5px;
+    transform: rotate(-6deg);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.wallet-clasp {
+    position: absolute;
+    right: -12px;
+    top: 40px;
+    width: 42px;
+    height: 34px;
+    background: #313f44;
+    border-radius: 0 8px 8px 0;
+    border: 2px solid #55686e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clasp-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #e6c587 0%, #997b43 100%);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+
+/* ---------------------------------------------------------
+   4. 3D BALLPOINT PEN
+--------------------------------------------------------- */
+.pen-item {
+    z-index: 9;
+    right: 250px;
+    bottom: 140px;
+    width: 190px;
+    height: 35px;
+    animation: floatPen3D 5.8s ease-in-out infinite 0.5s;
+}
+
+.pen-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.pen-clip {
+    position: absolute;
+    left: 22px;
+    top: 1px;
+    width: 38px;
+    height: 4px;
+    background: linear-gradient(90deg, #e8f2f8, #9bb3c4);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.35);
+}
+
+.pen-cap-ring {
+    position: absolute;
+    left: 55px;
+    top: 7px;
+    width: 6px;
+    height: 20px;
+    background: linear-gradient(180deg, #d2e1ec, #758e9f);
+    border-radius: 1px;
+    z-index: 2;
+}
+
+.pen-barrel {
+    position: relative;
+    width: 150px;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #7b9ab3 0%, #3e5a70 50%, #233746 100%);
+    box-shadow:
+        0px 3px 0px #1a2a37,
+        0px 6px 0px #111d27,
+        -8px 10px 18px rgba(6, 36, 56, 0.35);
+}
+
+.pen-grip {
+    position: absolute;
+    right: 15px;
+    width: 45px;
+    height: 100%;
+    background: rgba(20, 32, 42, 0.25);
+    border-radius: 0 8px 8px 0;
+}
+
+.pen-tip {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 28px solid #1c2b37;
+    filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.35));
+}
+
+
+/* ---------------------------------------------------------
+   5. 3D BACKPACK
+--------------------------------------------------------- */
+.bag-item {
+    z-index: 8;
+    right: 30px;
+    bottom: 110px;
+    width: 210px;
+    height: 270px;
+    animation: floatBag3D 7.8s ease-in-out infinite 0.3s;
+}
+
+.backpack-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.bag-top-handle {
+    position: absolute;
+    top: 0;
+    left: 64px;
+    width: 68px;
+    height: 48px;
+    border: 11px solid #2f3c4a;
+    border-bottom: none;
+    border-radius: 32px 32px 0 0;
+    box-shadow: -3px 3px 6px rgba(0,0,0,0.3);
+}
+
+.bag-strap {
+    position: absolute;
+    top: 35px;
+    width: 22px;
+    height: 190px;
+    background: linear-gradient(180deg, #2b3745, #1d2630);
+    border-radius: 12px;
+}
+
+.strap-left { left: 16px; transform: rotate(5deg); }
+.strap-right { right: 16px; transform: rotate(-5deg); }
+
+.bag-main-body {
+    position: absolute;
+    top: 32px;
+    left: 12px;
+    width: 172px;
+    height: 220px;
+    border-radius: 46px 46px 26px 26px;
+    background: linear-gradient(145deg, #536477, #314051);
+    /* 3D volumetric extrusion */
+    box-shadow:
+        -3px 3px 0px #24303d,
+        -6px 6px 0px #1c2631,
+        -9px 9px 0px #141b23,
+        -15px 20px 30px rgba(6, 36, 56, 0.42);
+}
+
+.bag-top-zip {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 132px;
+    height: 5px;
+    background: #a4b6c7;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.bag-front-pocket {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    width: 128px;
+    height: 90px;
+    border-radius: 14px 14px 20px 20px;
+    background: linear-gradient(145deg, #465668, #283543);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+        -2px 2px 0px #19232d,
+        -5px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.pocket-zip {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    width: 104px;
+    height: 4px;
+    background: #98abbc;
+    border-radius: 2px;
+}
+
+.bag-logo {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 22px;
+    height: 14px;
+    background: #a98d57;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================================
+   MEDIA QUERIES FOR RESPONSIVE SCALING
+========================================================= */
+
+@media (max-width: 1000px) {
+    .home-hero {
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        min-height: 480px;
+        padding: 40px 32px;
+    }
+
+    .phone-item {
+        left: 10px;
+        bottom: 100px;
+        scale: 0.75;
+    }
+
+    .tumbler-item {
+        left: 120px;
+        bottom: 90px;
+        scale: 0.75;
+    }
+
+    .pen-item {
+        right: 120px;
+        bottom: 100px;
+        scale: 0.75;
+    }
+
+    .bag-item {
+        right: 10px;
+        bottom: 80px;
+        scale: 0.75;
+    }
+}
+
+@media (max-width: 700px) {
+    .home-hero {
+        padding-top: 50px;
+    }
+
+    .hero-content {
+        width: 92%;
+        min-height: auto;
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(24px, 7vw, 36px);
+    }
+
+    .hero-description {
+        margin-top: 14px;
+        font-size: 14px;
+    }
+
+    .hero-tagline {
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
+    .get-started-button {
+        width: 230px;
+        height: 50px;
+        margin-top: 22px;
+        font-size: 17px;
+    }
+
+    .home-footer .text-start,
+    .footer .text-start,
+    .text-start {
+        padding: 12px 16px;
+        font-size: 12px;
+    }
+
+    .phone-item {
+        left: -30px;
+        bottom: 50px;
+        scale: 0.48;
+    }
+
+    .tumbler-item {
+        left: 30px;
+        bottom: 55px;
+        scale: 0.48;
+    }
+
+    .wallet-item {
+        left: 50%;
+        bottom: 50px;
+        scale: 0.48;
+    }
+
+    .pen-item {
+        right: 30px;
+        bottom: 55px;
+        scale: 0.48;
+    }
+
+    .bag-item {
+        right: -30px;
+        bottom: 45px;
+        scale: 0.48;
+    }
+}
+
+@media (max-width: 430px) {
+    .hero-content h1 {
+        font-size: 22px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero-tagline {
+        font-size: 11px;
+    }
+
+    .get-started-button {
+        width: 200px;
+        height: 44px;
+        font-size: 15px;
+    }
+}

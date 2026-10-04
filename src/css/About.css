@@ -1,0 +1,220 @@
+/* =========================================
+   ABOUT MODAL STYLES (Slate Blue Glass Theme)
+   ========================================= */
+
+.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.about-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 32px 36px;
+  box-shadow: 0 16px 40px rgba(6, 36, 56, 0.25);
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Custom Scrollbar */
+.about-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.about-card::-webkit-scrollbar-track {
+  background: rgba(6, 36, 56, 0.05);
+  border-radius: 10px;
+}
+
+.about-card::-webkit-scrollbar-thumb {
+  background: rgba(6, 36, 56, 0.25);
+  border-radius: 10px;
+}
+
+/* Close Button (Top Right Circle) */
+.about-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(6, 36, 56, 0.06);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #183e58;
+  transition: all 0.2s ease;
+}
+
+.about-close:hover {
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+}
+
+/* Headers */
+.about-card h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #062438;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
+}
+
+.about-card h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #062438;
+  margin: 0 0 14px 0;
+}
+
+/* Introduction Paragraphs */
+.about-intro {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #062438;
+  line-height: 1.5;
+  margin: 0 auto 10px auto;
+  max-width: 480px;
+}
+
+.about-description {
+  font-size: 0.88rem;
+  color: #08283e;
+  line-height: 1.55;
+  margin: 0 auto 24px auto;
+  max-width: 480px;
+}
+
+/* Sections */
+.about-section {
+  margin-bottom: 24px;
+}
+
+.about-section h3 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #062438;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section-p {
+  font-size: 0.88rem;
+  color: #08283e;
+  line-height: 1.55;
+  margin: 0 auto 16px auto;
+  max-width: 460px;
+}
+
+/* Features White Glass Box */
+.about-features-block {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(6, 36, 56, 0.1);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.about-features-block h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #062438;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-list li {
+  font-size: 0.85rem;
+  color: #08283e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.list-icon {
+  color: #059669;
+  flex-shrink: 0;
+}
+
+.about-admin-note {
+  font-size: 0.85rem;
+  color: #183e58;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 460px;
+}
+
+/* Community Box Accent */
+.community-box {
+  background: rgba(6, 36, 56, 0.04);
+  border: 1px solid rgba(6, 36, 56, 0.08);
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+
+.community-box h3 {
+  color: #062438;
+}
+
+.community-box .about-section-p {
+  margin: 0;
+}
+
+/* Footer Tagline & Button */
+.about-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.about-tagline {
+  font-size: 0.875rem;
+  color: #08283e;
+  margin: 0;
+}
+
+.about-button {
+  width: 100%;
+  padding: 12px 0;
+  background: #062438;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.about-button:hover {
+  background: #18415d;
+}

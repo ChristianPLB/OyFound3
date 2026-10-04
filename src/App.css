@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    color: #E0E1DD;
+    --font-family: 'Poppins', sans-serif;
+    font-size: larger;
+}
+
+body {
+    font-family: var(--font-family);
+    color: #E0E1DD;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #E0E1DD;
+    text-align: center;
+    background: linear-gradient(135deg, #778DA9 0%, #E0E1DD 100%);
+}
+
+.background-waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    /* Slide up configuration */
+    animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.background-waves svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    max-width: 700px;
+    padding: 2rem;
+    z-index: 1;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand {
+    color: #778DA9;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    color: #E0E1DD;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    color: #E0E1DD;
+}
+
+.background-waves svg path {
+    animation: waveSlideUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Wave layer colors */
+.background-waves svg path:nth-of-type(1) {
+    animation-delay: 0.1s;
+    fill: #E0E1DD;
+    opacity: 0.15;
+}
+
+.background-waves svg path:nth-of-type(2) {
+    animation-delay: 0.25s;
+    fill: #778DA9;
+    opacity: 0.35;
+}
+
+.background-waves svg path:nth-of-type(3) {
+    animation-delay: 0.4s;
+    fill: #E0E1DD;
+    opacity: 0.5;
+}
+
+.background-waves svg path:nth-of-type(4) {
+    animation-delay: 0.55s;
+    fill: #778DA9;
+    opacity: 0.8;
+}
+
+@keyframes waveSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   SIMPLE POPUP
+   ========================================= */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(7, 26, 45, 0.5);
+
+    backdrop-filter: blur(3px);
+}
+
+.popup-card {
+    position: relative;
+
+    width: 430px;
+    max-width: 100%;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+    font-family: "Poppins", sans-serif;
+}
+
+.popup-card h2 {
+    margin: 0 40px 8px 0;
+
+    color: #071a2d;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.popup-description {
+    margin: 0 0 20px;
+
+    color: #667085;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.popup-close {
+    position: absolute;
+
+    top: 12px;
+    right: 14px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    background: transparent;
+
+    color: #667085;
+
+    font-size: 27px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    color: #071a2d;
+}
+
+.popup-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-top: 12px;
+    padding: 13px 15px;
+
+    background: #f5f7f9;
+
+    border-radius: 10px;
+}
+
+.popup-item strong {
+    color: #344054;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.popup-item span {
+    color: #667085;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   MOBILE POPUP
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .popup-overlay {
+        padding: 15px;
+    }
+
+    .popup-card {
+        padding: 24px;
+        border-radius: 14px;
+    }
+
+    .popup-card h2 {
+        font-size: 21px;
+    }
+}

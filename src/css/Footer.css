@@ -1,0 +1,54 @@
+/* =========================================
+   FOOTER COMPONENT STYLES
+   ========================================= */
+
+.footer {
+    position: fixed; /* Fixes footer to the bottom of the viewport */
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    background-color: #67879c;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000; /* Ensures visibility above all background items */
+
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.06); /* Adds subtle separation from hero section */
+}
+
+.text-start {
+    width: 100%;
+    margin: 0;
+    padding: 12px 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+
+    color: #062438; /* Crisp navy text matching the page branding */
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 600px) {
+    .text-start {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

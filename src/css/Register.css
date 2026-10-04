@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+html,
+body,
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  font-family: "Poppins", sans-serif !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.auth-page {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  background: linear-gradient(
+    112deg,
+    #b5d5e7 0%,
+    #a7c8da 25%,
+    #99bccc 50%,
+    #8bb0bf 75%,
+    #7fa1b0 100%
+  ) !important;
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.auth-background {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  background:
+    radial-gradient(
+      circle at 28% 35%,
+      rgba(255, 255, 255, 0.35) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 72% 65%,
+      rgba(255, 255, 255, 0.25) 0%,
+      transparent 50%
+    ) !important;
+}
+
+.auth-orb,
+.auth-orb-one,
+.auth-orb-two,
+.auth-orb-three {
+  display: none !important;
+}
+
+/* =========================================
+   AUTH CARD (CENTERED VERTICALLY)
+========================================= */
+
+.auth-card {
+  position: relative !important;
+  z-index: 20 !important;
+  width: min(920px, 92%) !important;
+  max-height: 84vh !important;
+  margin: auto !important; /* Centers card vertically and horizontally */
+  display: flex !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.65) !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 15px 35px rgba(6, 36, 56, 0.12) !important;
+  animation: authAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.register-card {
+  flex-direction: row !important;
+}
+
+/* =========================================
+   FORM PANEL (LEFT)
+========================================= */
+
+.register-form-panel {
+  width: 62% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  overflow-y: auto !important;
+}
+
+.register-wrapper {
+  width: 100% !important;
+  max-width: 520px !important;
+  padding: 30px 32px !important;
+}
+
+.register-wrapper h2 {
+  margin: 0 0 16px !important;
+  color: #062438 !important;
+  text-align: center !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+}
+
+/* =========================================
+   WELCOME PANEL (RIGHT)
+========================================= */
+
+.register-form-panel + .welcome-panel {
+  width: 38% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 40px 30px !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  background: linear-gradient(
+    145deg,
+    #062438 0%,
+    #18415d 50%,
+    #1e4560 100%
+  ) !important;
+}
+
+/* =========================================
+   INPUTS & SELECTS
+========================================= */
+
+.register-grid input,
+.register-grid select,
+.birthdate-grid select {
+  width: 100% !important;
+  height: 42px !important;
+  padding: 0 14px !important;
+  border: 1px solid #b5d5e7 !important;
+  border-radius: 9px !important;
+  outline: none !important;
+  background: #ffffff !important;
+  color: #062438 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.register-grid input:focus,
+.register-grid select:focus,
+.birthdate-grid select:focus {
+  border-color: #1e4560 !important;
+  box-shadow: 0 0 0 3px rgba(30, 69, 96, 0.15) !important;
+}
+
+.register-grid input::placeholder {
+  color: #7fa1b0 !important;
+}
+
+/* =========================================
+   REGISTER GRID
+========================================= */
+
+.register-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+.register-grid > div {
+  min-width: 0 !important;
+}
+
+.register-grid .full-width {
+  grid-column: 1 / -1 !important;
+}
+
+/* =========================================
+   CHILDREN & HEADINGS
+========================================= */
+
+.register-grid h3 {
+  margin: 8px 0 4px !important;
+  color: #062438 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+}
+
+.children-row {
+  display: contents !important;
+}
+
+/* =========================================
+   BIRTHDATE
+========================================= */
+
+.birthdate-field {
+  grid-column: 1 / -1 !important;
+}
+
+.birthdate-field label {
+  display: block !important;
+  margin-bottom: 6px !important;
+  color: #062438 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+}
+
+.birthdate-grid {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr 1fr !important;
+  gap: 8px !important;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.register-submit {
+  width: 100% !important;
+  height: 44px !important;
+  margin-top: 18px !important;
+  border: none !important;
+  border-radius: 22px !important;
+  background: #062438 !important;
+  color: #ffffff !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  box-shadow: 0 6px 16px rgba(6, 36, 56, 0.2) !important;
+  transition: all 0.2s ease !important;
+}
+
+.register-submit:hover {
+  transform: translateY(-2px) !important;
+  background: #18415d !important;
+  box-shadow: 0 8px 20px rgba(6, 36, 56, 0.28) !important;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+  .auth-card,
+  .register-card {
+    width: 92% !important;
+    max-height: none !important;
+    flex-direction: column !important;
+    margin: 30px auto !important;
+  }
+
+  .register-form-panel,
+  .register-form-panel + .welcome-panel {
+    width: 100% !important;
+  }
+
+  .register-form-panel {
+    order: 1 !important;
+  }
+
+  .register-form-panel + .welcome-panel {
+    order: 2 !important;
+    padding: 35px 20px !important;
+  }
+
+  .register-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .birthdate-grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}

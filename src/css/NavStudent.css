@@ -1,0 +1,805 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.nav-student-navbar {
+    background: #0D1B2A !important;
+    min-height: 70px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid rgba(119, 141, 169, 0.2);
+}
+
+.nav-student-container {
+    width: 100%;
+}
+
+
+/* =========================================================
+   OYFOUND LOGO
+========================================================= */
+
+.nav-student-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-student-brand svg {
+    display: block;
+    width: 220px;
+    height: 44px;
+}
+
+.logo-text-base {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR TOGGLE
+========================================================= */
+
+.nav-student-toggler {
+    border-color: #d3d7dd;
+}
+
+.nav-student-toggler .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.nav-student-search-form {
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-bar {
+    background: #1B263B !important;
+    border: 1px solid #415A77 !important;
+    color: #E0E1DD !important;
+    border-radius: 10px;
+    min-height: 40px;
+}
+
+.search-bar::placeholder {
+    color: #778DA9;
+}
+
+.search-bar:focus {
+    border-color: #778DA9 !important;
+    box-shadow: 0 0 0 3px rgba(119, 141, 169, 0.15) !important;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.nav-student-messages-link {
+    color: #E0E1DD !important;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-student-messages-link:hover {
+    color: #778DA9 !important;
+}
+
+.nav-student-message-badge {
+    font-size: 0.6rem;
+}
+
+
+/* =========================================================
+   NOTIFICATION AREA (Dark Slate Glass Theme)
+========================================================= */
+
+.nav-student-notification-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-student-notification-btn {
+    background: transparent;
+    border: none;
+    color: #b5d5e7;
+    position: relative;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-student-notification-btn:hover {
+    background: rgba(181, 213, 231, 0.15);
+    color: #ffffff;
+}
+
+.nav-student-notification-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #dc2626;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #062438;
+    line-height: 1;
+}
+
+.nav-student-notification-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 340px;
+    max-width: calc(100vw - 30px);
+    background: rgba(6, 36, 56, 0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(181, 213, 231, 0.25);
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(6, 36, 56, 0.35);
+    z-index: 1050;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-student-notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #08283e;
+    border-bottom: 1px solid rgba(181, 213, 231, 0.15);
+}
+
+.nav-student-notification-header h6 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.nav-student-notification-mark-read {
+    font-size: 0.72rem;
+    color: #99bccc;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.nav-student-notification-mark-read:hover {
+    color: #b5d5e7;
+}
+
+.nav-student-notification-list {
+    max-height: 320px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #7fa1b0 transparent;
+}
+
+.nav-student-notification-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(181, 213, 231, 0.08);
+    color: #b5d5e7;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.nav-student-notification-item:hover {
+    background: rgba(181, 213, 231, 0.1);
+}
+
+.nav-student-notification-item.unread {
+    background: rgba(24, 65, 93, 0.45);
+}
+
+.nav-student-notification-item.unread:hover {
+    background: rgba(24, 65, 93, 0.65);
+}
+
+.nav-student-notification-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border-radius: 50%;
+    background: #08283e;
+    border: 1px solid rgba(181, 213, 231, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8bb0bf;
+}
+
+.nav-student-notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.nav-student-notification-text {
+    font-size: 0.78rem;
+    margin: 0;
+    line-height: 1.4;
+    color: #ffffff;
+    word-break: break-word;
+}
+
+.nav-student-notification-time {
+    display: block;
+    font-size: 0.65rem;
+    color: #99bccc;
+    margin-top: 4px;
+}
+
+.nav-student-notification-footer {
+    padding: 10px 16px;
+    background: #08283e;
+    border-top: 1px solid rgba(181, 213, 231, 0.15);
+    text-align: center;
+}
+
+.nav-student-notification-footer a {
+    color: #99bccc;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-student-notification-footer a:hover {
+    color: #ffffff;
+}
+
+/* =========================================================
+   USER / PROFILE
+========================================================= */
+
+.nav-student-user-section {
+    border-color: rgba(119, 141, 169, 0.3) !important;
+}
+
+.nav-student-profile-link {
+    color: #E0E1DD;
+    text-decoration: none;
+}
+
+.nav-student-user-name {
+    color: #E0E1DD;
+    font-weight: 500;
+}
+
+.nav-student-profile-image {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border: 2px solid #778DA9;
+}
+
+
+/* =========================================================
+   FLOATING OYBOT
+========================================================= */
+
+.floating-ai-wrapper {
+    position: fixed;
+    bottom: auto;
+    right: auto;
+    z-index: 9999;
+    user-select: none;
+}
+
+.floating-ai-wrapper.is-dragging {
+    cursor: grabbing;
+}
+
+
+/* =========================================================
+   OYBOT BUTTON
+========================================================= */
+
+.floating-ai-btn {
+    cursor: grab;
+    padding: 10px 16px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #778DA9;
+    background: #1B263B;
+    color: #E0E1DD;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.floating-ai-btn:hover {
+    background: #415A77;
+    transform: translateY(-2px);
+}
+
+.floating-ai-btn:active {
+    cursor: grabbing;
+}
+
+.floating-ai-text {
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   OYBOT CHAT POPUP
+========================================================= */
+
+.ai-chat-popup-card {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 360px;
+    max-width: calc(100vw - 30px);
+    height: 520px;
+    background: #0D1B2A;
+    border: 1px solid #415A77;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================================================
+   OYBOT HEADER
+========================================================= */
+
+.ai-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 17px;
+    background: #1B263B;
+    border-bottom: 1px solid rgba(119, 141, 169, 0.25);
+}
+
+.ai-popup-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ai-popup-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-popup-title-group h6 {
+    margin: 0;
+    color: #E0E1DD;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.ai-status-online {
+    display: block;
+    margin-top: 2px;
+    color: #778DA9;
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.ai-close-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #778DA9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ai-close-btn:hover {
+    background: rgba(119, 141, 169, 0.15);
+    color: #E0E1DD;
+}
+
+
+/* =========================================================
+   CHAT MESSAGES
+========================================================= */
+
+.ai-popup-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: #415A77 transparent;
+}
+
+.ai-message-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.ai-message-row.user {
+    flex-direction: row-reverse;
+}
+
+
+/* =========================================================
+   MESSAGE AVATAR
+========================================================= */
+
+.ai-avatar {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #415A77;
+    color: #E0E1DD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-message-row.user .ai-avatar {
+    background: #778DA9;
+}
+
+
+/* =========================================================
+   MESSAGE BUBBLE
+========================================================= */
+
+.ai-bubble-content {
+    max-width: 78%;
+}
+
+.ai-bubble {
+    background: #1B263B;
+    color: #E0E1DD;
+    padding: 9px 12px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.ai-message-row.user .ai-bubble {
+    background: #415A77;
+}
+
+.ai-timestamp {
+    display: block;
+    margin-top: 4px;
+    color: #778DA9;
+    font-size: 0.6rem;
+}
+
+
+/* =========================================================
+   TYPING INDICATOR
+========================================================= */
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+}
+
+.typing-indicator span {
+    width: 5px;
+    height: 5px;
+    background: #778DA9;
+    border-radius: 50%;
+    animation: typingPulse 1.2s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes typingPulse {
+    0%, 60%, 100% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =========================================================
+   SUGGESTION CHIPS
+========================================================= */
+
+.ai-popup-chips {
+    display: flex;
+    gap: 7px;
+    overflow-x: auto;
+    padding: 10px 14px;
+    border-top: 1px solid rgba(119, 141, 169, 0.15);
+    scrollbar-width: none;
+}
+
+.ai-popup-chips::-webkit-scrollbar {
+    display: none;
+}
+
+.ai-chip {
+    flex: 0 0 auto;
+    border: 1px solid #415A77;
+    background: #1B263B;
+    color: #E0E1DD;
+    border-radius: 15px;
+    padding: 6px 10px;
+    font-size: 0.65rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ai-chip:hover {
+    background: #415A77;
+}
+
+
+/* =========================================================
+   CHAT INPUT
+========================================================= */
+
+.ai-popup-input-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: #1B263B;
+    border-top: 1px solid rgba(119, 141, 169, 0.2);
+}
+
+.ai-popup-input-area input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #415A77;
+    background: #0D1B2A;
+    color: #E0E1DD;
+    border-radius: 10px;
+    padding: 9px 11px;
+    outline: none;
+    font-size: 0.75rem;
+}
+
+.ai-popup-input-area input::placeholder {
+    color: #778DA9;
+}
+
+.ai-popup-input-area input:focus {
+    border-color: #778DA9;
+}
+
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.ai-popup-send {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    border: none;
+    border-radius: 10px;
+    background: #415A77;
+    color: #E0E1DD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ai-popup-send:hover:not(:disabled) {
+    background: #778DA9;
+}
+
+.ai-popup-send:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   NOTIFICATION TOAST POPUP (Fixed Floating Banner)
+========================================================= */
+
+.nav-notif-toast-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    width: calc(100% - 40px);
+    max-width: 380px;
+    background: #1B263B;
+    border: 1px solid #415A77;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-notif-toast-popup.approved {
+    border-left: 5px solid #2e7d32;
+}
+
+.nav-notif-toast-popup.rejected {
+    border-left: 5px solid #d32f2f;
+}
+
+.toast-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.toast-title {
+    margin: 0 0 4px 0;
+    color: #E0E1DD;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.toast-message {
+    margin: 0;
+    color: #778DA9;
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+.toast-close-btn {
+    background: transparent;
+    border: none;
+    color: #778DA9;
+    cursor: pointer;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+}
+
+.toast-close-btn:hover {
+    color: #E0E1DD;
+}
+
+
+/* =========================================================
+   RESPONSIVE NAVIGATION
+========================================================= */
+
+@media (max-width: 991px) {
+    .nav-student-search-form {
+        max-width: 100%;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .nav-student-user-section {
+        border-left: none !important;
+        border-top: 1px solid rgba(119, 141, 169, 0.2);
+        padding: 12px 0 0 0 !important;
+        margin-top: 8px;
+    }
+
+    .nav-student-user-name {
+        display: inline !important;
+    }
+
+    .nav-student-notification-dropdown {
+        position: fixed;
+        top: 70px;
+        left: 15px;
+        right: 15px;
+        width: auto;
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+    .nav-student-navbar {
+        padding: 7px 10px;
+    }
+
+    .nav-student-brand svg {
+        width: 170px;
+        height: 38px;
+    }
+
+    .ai-chat-popup-card {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 75px;
+        width: auto;
+        max-width: none;
+        height: min(520px, calc(100vh - 110px));
+    }
+
+    .floating-ai-btn {
+        padding: 8px 12px;
+    }
+
+    .floating-ai-btn svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .floating-ai-text {
+        font-size: 0.85rem;
+    }
+
+    .nav-notif-toast-popup {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        width: auto;
+        max-width: none;
+    }
+}

@@ -1,0 +1,445 @@
+/* Load Google Font: Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+/* Base Layout & Global Font Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- MAIN CONTAINER & SLATE BLUE GRADIENT BASE --- */
+.home-admin-container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(
+        112deg,
+        #b5d5e7 0%,   /* Lightest sky blue */
+        #a7c8da 25%,  /* Mid-light blue */
+        #99bccc 50%,  /* Middle slate blue */
+        #8bb0bf 75%,  /* Mid-dark slate blue */
+        #7fa1b0 100%  /* Dark slate blue */
+    );
+    background-attachment: fixed;
+    color: #062438;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Main Content Styling */
+.admin-main-content {
+    flex-grow: 1;
+    padding: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+/* --- RECENT REPORTS HEADER CENTERED --- */
+.content-header {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content-header h1 {
+    font-size: 2.2rem;
+    color: #062438;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    text-align: center;
+}
+
+/* --- REPORTS GRID & CARDS --- */
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+    gap: 24px;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.admin-card-container,
+.report-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 10px 25px rgba(6, 36, 56, 0.08);
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-card-container:hover,
+.report-card:hover {
+    background: rgba(255, 255, 255, 0.55);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(6, 36, 56, 0.15);
+}
+
+.admin-card-left,
+.report-image-container {
+    flex: 0 0 140px;
+    height: 140px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(6, 36, 56, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.admin-card-image,
+.report-img-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-card-right,
+.report-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    gap: 4px;
+}
+
+.card-item-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #062438;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.card-info-text {
+    font-size: 0.9rem;
+    margin: 1px 0;
+    color: #062438;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.card-info-text strong {
+    font-weight: 700;
+    color: #062438;
+}
+
+.card-description-box {
+    font-size: 0.88rem;
+    margin-top: 6px;
+    color: #062438;
+    text-align: left;
+    width: 100%;
+    line-height: 1.4;
+}
+
+.card-description-box strong {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.card-description-box p {
+    margin: 0;
+    color: #08283e;
+    text-align: left;
+}
+
+.card-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* Badge Styling */
+.badge,
+.status-pill {
+    display: inline-flex;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+}
+
+.lost-side .badge,
+.badge.status-lost,
+.status-pill.status-lost { 
+    background: rgba(220, 38, 38, 0.15); 
+    color: #dc2626; 
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.found-side .badge,
+.badge.status-found,
+.status-pill.status-found { 
+    background: rgba(5, 150, 105, 0.15); 
+    color: #059669; 
+    border: 1px solid rgba(5, 150, 105, 0.3);
+}
+
+/* Action Buttons */
+.action-btn,
+.claim-btn {
+    background: #062438;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 8px 20px;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(6, 36, 56, 0.25);
+    transition: all 0.25s ease;
+}
+
+.action-btn:hover,
+.claim-btn:hover {
+    background: #18415d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(6, 36, 56, 0.35);
+}
+
+/* ==========================================================================
+   EDIT REPORT MODAL & FORM UI STYLES (CENTERED)
+   ========================================================================== */
+.edit-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(6, 36, 56, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center; /* Perfectly centered horizontally */
+    align-items: center;    /* Perfectly centered vertically */
+    z-index: 2000;
+    padding: 20px;
+}
+
+.edit-modal-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    padding: 32px;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 24px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(6, 36, 56, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.close-edit-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #183e58;
+    transition: color 0.2s ease;
+}
+
+.close-edit-btn:hover {
+    color: #dc2626;
+}
+
+.edit-modal-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #062438;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.edit-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.edit-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+}
+
+.edit-input-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #062438;
+}
+
+.edit-input-group input,
+.edit-input-group select,
+.edit-input-group textarea {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(6, 36, 56, 0.25);
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #062438;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.edit-input-group input:focus,
+.edit-input-group select:focus,
+.edit-input-group textarea:focus {
+    background-color: #ffffff;
+    border-color: #062438;
+    box-shadow: 0 0 0 3px rgba(6, 36, 56, 0.15);
+}
+
+.edit-input-group textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.edit-modal-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-cancel-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(6, 36, 56, 0.2);
+    background: transparent;
+    color: #062438;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.edit-cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.edit-save-btn {
+    padding: 10px 24px;
+    border-radius: 20px;
+    border: none;
+    background: #062438;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(6, 36, 56, 0.2);
+    transition: all 0.25s ease;
+}
+
+.edit-save-btn:hover:not(:disabled) {
+    background: #18415d;
+    transform: translateY(-1px);
+}
+
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- IMAGE PREVIEW OVERLAY --- */
+.image-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    background: rgba(6, 36, 56, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+}
+
+.modal-content img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 25px 50px rgba(6, 36, 56, 0.25);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #183e58;
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close-modal:hover {
+    color: #dc2626;
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media(max-width: 992px) {
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 576px) {
+    .admin-main-content {
+        padding: 20px 16px;
+    }
+    .admin-card-container,
+    .report-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .admin-card-left,
+    .report-image-container {
+        width: 100%;
+        height: 180px;
+        flex: none;
+    }
+}
+/* Center empty state message inside reports grid */
+.reports-grid > p,
+.no-reports-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    width: 100%;
+    margin: 40px auto;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #062438;
+}

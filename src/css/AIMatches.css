@@ -1,0 +1,198 @@
+/* Container Layout */
+.home-admin-container {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.admin-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.content-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.content-header h1 {
+    font-size: 1.75rem;
+    color: #0f172a;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.content-header p {
+    color: #64748b;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Layout Grid */
+.matches-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Comparison Card Layout */
+.match-comparison-card {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.match-comparison-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Matching Sides Configuration */
+.match-side {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.lost-side {
+    background-color: rgba(239, 68, 68, 0.02);
+}
+
+.found-side {
+    background-color: rgba(34, 197, 94, 0.02);
+    align-items: flex-start;
+}
+
+/* Visual Badges */
+.badge {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.lost-side .badge {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+.found-side .badge {
+    background-color: #dcfce7;
+    color: #22c55e;
+}
+
+/* Image Wrappers */
+.match-img-wrapper {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.match-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography Inside Cards */
+.match-side h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.landmark-text {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #64748b;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+/* The Center Splitter (VS System) */
+.match-vs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #fafafa;
+    border-left: 1px dashed #e2e8f0;
+    border-right: 1px dashed #e2e8f0;
+    padding: 1rem;
+}
+
+.match-score {
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.3);
+    width: 90px;
+}
+
+.vs-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: #e2e8f0;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Empty State Styling */
+.empty-state-card {
+    background-color: #ffffff;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.empty-state-card p {
+    color: #94a3b8;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive Structural Break for Smaller Viewports */
+@media (max-width: 768px) {
+    .match-comparison-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .match-vs {
+        padding: 1rem 0;
+        border-left: none;
+        border-right: none;
+        border-top: 1px dashed #e2e8f0;
+        border-bottom: 1px dashed #e2e8f0;
+    }
+    
+    .vs-line {
+        display: none;
+    }
+}

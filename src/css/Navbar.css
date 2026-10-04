@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');
+
+/* =========================================
+   OYFOUND PUBLIC NAVBAR
+   ========================================= */
+
+.oyfound-navbar {
+    width: 100%;
+    height: 72px;
+
+    background: #071a2d;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    z-index: 1000;
+}
+
+.oyfound-navbar-container {
+    width: 100%;
+    
+    /* Removed max-width constraint to stretch across full screen width */
+    margin: 0;
+    padding: 0 40px; /* Comfortably spaces logo from left edge and links from right edge */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.oyfound-navbar-logo {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    height: 50px;
+}
+
+.oyfound-logo {
+    width: 200px;
+    height: auto;
+
+    display: block;
+}
+
+/* Used if rendering SVG as an <img> tag */
+.oyfound-logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo-oy {
+    fill: #ffffff;
+}
+
+.logo-found {
+    fill: #aebccc;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+   ========================================= */
+
+.oyfound-navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 36px; /* Spacing between Home, Contact Us, and About Us */
+}
+
+.oyfound-nav-link {
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 18px; /* Matches layout proportions in reference image */
+    font-weight: 700; /* Bold Poppins font */
+
+    text-decoration: none;
+
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.oyfound-nav-link:hover {
+    color: #aebccc;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   BUTTON LINKS
+   ========================================= */
+
+.nav-button {
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .oyfound-navbar {
+        height: 64px;
+    }
+
+    .oyfound-navbar-container {
+        padding: 0 20px;
+    }
+
+    .oyfound-logo {
+        width: 140px;
+    }
+
+    .oyfound-logo-img {
+        height: 32px;
+    }
+
+    .oyfound-navbar-links {
+        gap: 16px;
+    }
+
+    .oyfound-nav-link {
+        font-size: 13px;
+        font-weight: 700;
+    }
+}
