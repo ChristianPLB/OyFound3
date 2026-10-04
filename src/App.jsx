@@ -6,7 +6,7 @@ import "./App.css";
 import { auth } from "./firebase";
 
 // Public pages
-import ForgotPassword from "./components/ForgotPassword.jsx";
+import ForgotPassword from "./components/Forgotpassword.jsx";
 import Home from "./components/Home.jsx";
 import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
